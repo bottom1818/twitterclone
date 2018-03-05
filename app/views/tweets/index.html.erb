@@ -1,0 +1,13 @@
+<%= render 'form' %>
+
+<div class="container">
+  <% @tweets.each do |tweet| %>
+    <div class="tweet-panel">
+      <p><%= tweet.content %></p>
+      <div class="tweet-links">
+        <%= link_to '編集する', edit_tweet_path(tweet), class: 'btn btn-info' %>
+        <%= link_to '削除する', tweet, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+      </div>
+    </div>
+  <% end %>
+</div>
